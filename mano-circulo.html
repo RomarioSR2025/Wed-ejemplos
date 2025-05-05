@@ -18,9 +18,11 @@
     let handPose
     let video
     let hands = []
+    let img
 
     function preload(){
         handPose = ml5.handPose()
+        img = loadImage('images/sol.png')
     }
 
     function setup(){
@@ -55,6 +57,10 @@
         stroke(255)
         strokeWeight(7)
         circle(centerX, centerY, pinch)
+
+        let size = pinch  
+        imageMode(CENTER)
+        image(img, centerX, centerY, size, size)
       }
     }
 
