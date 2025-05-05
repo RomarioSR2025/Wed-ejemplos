@@ -53,14 +53,25 @@
 
         let pinch = dist(finger.x, finger.y, thumb.x, thumb.y)
 
-        fill(255,0,0,150)
-        stroke(255)
-        strokeWeight(7)
-        circle(centerX, centerY, pinch)
+        //fill(255,0,0,150)
+        //stroke(255)
+        //strokeWeight(7)
+        //circle(centerX, centerY, pinch)
 
-        let size = pinch  
-        imageMode(CENTER)
-        image(img, centerX, centerY, size, size)
+        if (pinch < 30) {
+          fill(255, 0, 0, 150) // Rojo si es pequeño
+          } else if (pinch < 60) {
+            fill(255, 165, 0, 150) // Naranja si es mediano
+              } else {
+                 fill(0, 255, 0, 150) // Verde si es grande
+                }
+
+                stroke(255)
+                strokeWeight(7)
+                circle(centerX, centerY, pinch)
+        //let size = pinch  
+        //imageMode(CENTER)
+        //image(img, centerX, centerY, size, size)
       }
     }
 
